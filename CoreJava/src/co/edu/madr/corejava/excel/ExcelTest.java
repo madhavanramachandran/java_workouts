@@ -24,6 +24,12 @@ public class ExcelTest {
 		try {
 			FileOutputStream output = new FileOutputStream("D:\\output.xlsx");
 			writer.buildExcel(workBook, listingList, -1, "success");
+			
+			//this line, i am sending the list to the same sheet which is already present
+			//'0' is the index of the first sheet
+			writer.buildExcel(workBook, listingList, 0, "success");
+			
+			//it is only for writing the stream to file system
 			workBook.write(output);
 			output.close();
 		} catch (Exception e) {
