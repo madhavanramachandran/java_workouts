@@ -16,5 +16,5 @@ public class ObjMainTest {
 		System.out.println("Setting values by seperate method:: " + emp2);
 
 	}
-
+ 
 }
