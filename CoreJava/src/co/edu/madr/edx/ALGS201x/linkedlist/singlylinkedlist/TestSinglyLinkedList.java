@@ -4,7 +4,18 @@ public class TestSinglyLinkedList {
 
 	public static void main(String[] args) {
 		TestSinglyLinkedList test = new TestSinglyLinkedList();
-		test.doTest();
+		//test.doTest();
+		
+		test.doSinglyLinkedHeadOnlyTest();
+	}
+
+	private void doSinglyLinkedHeadOnlyTest() {
+		SinglyLinkedListHeadOnly<Integer> list = new SinglyLinkedListHeadOnly<>();
+		list.addFirst(40); list.addFirst(20);
+		list.addLast(60);
+		list.add(2, 80);
+		list.delete(1);
+		System.out.println(list);
 	}
 
 	private void doTest() {
@@ -20,7 +31,13 @@ public class TestSinglyLinkedList {
 		System.out.println(list.getFirst());
 		System.out.println(list.getLast());
 		
-		
+		System.out.println("######################################");
+		SinglyLinkedList<Integer> delTest = new SinglyLinkedList<>();
+		delTest.add(666);
+		delTest.add(222);
+		System.out.println(delTest);
+		delTest.deleteLast();
+		System.out.println(delTest);
 	}
 
 }

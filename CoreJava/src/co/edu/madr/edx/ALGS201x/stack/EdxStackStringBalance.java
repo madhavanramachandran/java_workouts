@@ -1,4 +1,4 @@
-package co.edu.madr.edx.ALGS201x;
+package co.edu.madr.edx.ALGS201x.stack;
 
 import java.util.Scanner;
 import java.util.Stack;

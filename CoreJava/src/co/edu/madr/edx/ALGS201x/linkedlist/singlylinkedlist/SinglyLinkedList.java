@@ -29,7 +29,7 @@ public class SinglyLinkedList<T> {
 	}
 
 	public void add(T data) {
-		if (head.getPointer().equals(tail.getPointer())) {
+		if (isEmpty()) {
 			addFirst(data);
 		} else {
 			addLast(data);
@@ -78,6 +78,36 @@ public class SinglyLinkedList<T> {
 			tail.setPointer(newNode);
 		}
 		size++;
+	}
+
+	public void deleteFirst() {
+		if (size == 1) {
+			head.setPointer(null);
+			tail.setPointer(null);
+		} else if (size > 1) {
+			Node<T> deleteNode = head.getPointer();
+			Node<T> temp = deleteNode.getPointer();
+			head.setPointer(temp);
+			deleteNode = null;
+			size--;
+		}
+	}
+
+	public void deleteLast() {
+		if (size == 1) {
+			deleteFirst();
+		} else if (size > 1) {
+			Node<T> temp = head.getPointer();
+			Node<T> previousLast = null;
+			while (temp.getPointer() != null) {
+				if (temp.getPointer().getPointer() == null) {
+					previousLast = temp.getPointer();
+				}
+				temp = temp.getPointer();
+			} 
+			tail.setPointer(previousLast);
+		}
+		size--;
 	}
 
 	public T getFirst() {

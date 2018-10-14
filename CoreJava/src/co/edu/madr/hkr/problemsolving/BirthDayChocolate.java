@@ -17,13 +17,6 @@ public class BirthDayChocolate {
 			sum += s.get(j);
 			count += (sum == d && j == m - 1) ? 1 : 0;
 		}
-		
-		/*for (int i = 1; i < s.size() - m + 1; i++) {
-			sum += -s.get(i - 1) + s.get(i + m - 1);
-			count += (sum == d) ? 1 : 0;
-		}
-		*/
-
 		for (int i = m; i < s.size(); i++) {
 			sum += -s.get(i-m) + s.get(i);
 			count += (sum == d) ? 1 : 0;

@@ -11,7 +11,7 @@ package co.edu.madr.edx.ALGS201x.stack;
  */
 public class StackWithArray {
 
-	private final int DEFAULT_SIZE = 10;
+	private static final int DEFAULT_SIZE = 10;
 
 	private int top;
 	private int stackSize;
@@ -26,9 +26,7 @@ public class StackWithArray {
 	}
 
 	public StackWithArray() {
-		this.top = -1;
-		this.stackSize = DEFAULT_SIZE;
-		this.stackArray = new int[this.stackSize];
+		this(DEFAULT_SIZE);
 	}
 
 	public StackWithArray(int size) {
