@@ -14,6 +14,8 @@ public class DNode<T> {
 
 	public DNode(T data) {
 		this.data = data;
+		previous = null;
+		next = null;
 	}
 
 	public T getData() {
@@ -38,6 +40,12 @@ public class DNode<T> {
 
 	public void setNext(DNode<T> next) {
 		this.next = next;
+	}
+
+	@Override
+	public String toString() {
+		return "DNode [previous=" + (getPrevious() != null ? getPrevious().getData() : null) + ", data="
+				+ this.getData() + ", next=" + (getNext() != null ? getNext().getData() : null) + "]";
 	}
 
 }
