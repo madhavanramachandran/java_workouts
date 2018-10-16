@@ -66,6 +66,56 @@ public class DoublyLinkedList<T> {
 		}
 	}
 
+	public void deleteFirst() {
+		head = head.getNext();
+		head.setPrevious(null);
+		size--;
+	}
+
+	public void deleteLast() {
+		DNode<T> currentNode = head;
+		DNode<T> previousLast = null;
+		while (null != currentNode.getNext()) {
+			previousLast = currentNode;
+			currentNode = currentNode.getNext();
+		}
+		previousLast.setNext(null);
+		size--;
+	}
+
+	public void delete(int index) {
+		if (index == 1) {
+			deleteFirst();
+		} else if (index == size) {
+			deleteLast();
+		} else {
+			DNode<T> idxNode = head;
+			for (int i = 1; i < index; i++) {
+				idxNode = idxNode.getNext();
+			}
+			DNode<T> idxNextNode = idxNode.getNext();
+			DNode<T> idxPreviousNode = idxNode.getPrevious();
+			idxNextNode.setPrevious(idxPreviousNode);
+			idxPreviousNode.setNext(idxNextNode);
+			size--;
+		}
+	}
+
+	public int search(T data) {
+		if (!isEmpty()) {
+			DNode<T> temp = head;
+			int dataIdx = 0;
+			while (temp != null) {
+				if (temp.getData().equals(data)) {
+					return dataIdx;
+				}
+				temp = temp.getNext();
+				dataIdx++;
+			}
+		}
+		return -1;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();

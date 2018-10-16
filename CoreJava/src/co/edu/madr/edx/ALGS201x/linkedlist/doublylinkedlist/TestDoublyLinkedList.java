@@ -19,6 +19,7 @@ public class TestDoublyLinkedList {
 		System.out.println(list);
 		list.addLast(250);
 		System.out.println(list);
+		System.out.println(list.search(250));
 		
 	}
 
