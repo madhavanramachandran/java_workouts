@@ -60,8 +60,8 @@ public class DoublyLinkedList<T> {
 			DNode<T> idxNextNode = idxNode.getNext();
 			idxNextNode.setPrevious(newNode);
 			newNode.setNext(idxNextNode);
+			newNode.setPrevious(idxNode);
 			idxNode.setNext(newNode);
-			head = idxNode;
 			size++;
 		}
 	}

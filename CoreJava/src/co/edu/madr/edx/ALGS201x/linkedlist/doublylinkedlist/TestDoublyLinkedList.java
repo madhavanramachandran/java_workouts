@@ -15,9 +15,10 @@ public class TestDoublyLinkedList {
 		System.out.println(list);
 		list.addLast(125);
 		System.out.println(list);
-		list.add(2, 200);
-		System.out.println(list);
 		list.addLast(250);
+		System.out.println(list);
+		list.add(2, 200);
+		list.add(2, 195);
 		System.out.println(list);
 		System.out.println(list.search(250));
 		
