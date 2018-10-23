@@ -9,17 +9,13 @@ package co.edu.madr.edx.ALGS201x.stack;
  *         Pros: All operations are constant. Cons: Potentially wasted memory if
  *         we initialize with large values and using less of it.
  */
-public class StackWithArray {
+public class StackWithArray implements IStack {
 
 	private static final int DEFAULT_SIZE = 10;
 
 	private int top;
 	private int stackSize;
 	private int[] stackArray;
-
-	private boolean isStackEmpty() {
-		return top == -1;
-	}
 
 	private boolean isStackFull() {
 		return top == this.stackSize - 1;
@@ -38,7 +34,13 @@ public class StackWithArray {
 	public int size() {
 		return this.stackSize;
 	}
+	
+	@Override
+	public boolean isStackEmpty() {
+		return top == -1;
+	}
 
+	@Override
 	public void push(int e) {
 		if (isStackFull()) {
 			throw new ArrayIndexOutOfBoundsException();
@@ -50,6 +52,7 @@ public class StackWithArray {
 	/**
 	 * Will remove and return the element at the top;
 	 */
+	@Override
 	public int pop() {
 		if (isStackEmpty()) {
 			throw new ArrayIndexOutOfBoundsException();
@@ -62,6 +65,7 @@ public class StackWithArray {
 	 * 
 	 * @return
 	 */
+	@Override
 	public int peek() {
 		if (isStackEmpty()) {
 			throw new ArrayIndexOutOfBoundsException();
@@ -73,7 +77,7 @@ public class StackWithArray {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Stack[");
-		for (int i = 0; i < this.top; i++) {
+		for (int i = 0; i <= this.top; i++) {
 			builder.append(this.stackArray[i] + ", ");
 		}
 		builder.append("]");

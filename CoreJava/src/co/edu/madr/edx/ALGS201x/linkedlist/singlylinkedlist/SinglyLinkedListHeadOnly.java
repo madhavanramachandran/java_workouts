@@ -40,9 +40,13 @@ public class SinglyLinkedListHeadOnly<T> {
 	}
 
 	public void addLast(T data) {
-		Node<T> lastNode = findLastNode();
-		lastNode.setPointer(new Node<T>(data));
-		size++;
+		if (isEmpty()) {
+			addFirst(data);
+		} else {
+			Node<T> lastNode = findLastNode();
+			lastNode.setPointer(new Node<T>(data));
+			size++;
+		}
 	}
 
 	public void add(int index, T data) {
@@ -96,9 +100,12 @@ public class SinglyLinkedListHeadOnly<T> {
 			Node<T> deleteNext = currentNode.getPointer().getPointer();
 			currentNode.setPointer(deleteNext);
 			size--;
-			
-			
+
 		}
+	}
+
+	public T getLast() {
+		return this.findLastNode().getKey();
 	}
 
 	public boolean isEmpty() {

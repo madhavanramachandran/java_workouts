@@ -3,35 +3,48 @@
  */
 package co.edu.madr.edx.ALGS201x.stack;
 
-import java.util.LinkedList;
+import co.edu.madr.edx.ALGS201x.linkedlist.singlylinkedlist.SinglyLinkedListHeadOnly;
 
 /**
  * @author madr
  *
  */
-public class StackWithLinkedList {
+public class StackWithLinkedList implements IStack{
 
-	
-	private int top;
-	
-	private int stackSize;
-	
-	private LinkedList<?> stackList;
+	private SinglyLinkedListHeadOnly<Integer> stackList;
 	
 	public StackWithLinkedList() {
-		this.top = -1;
-		this.stackList = new LinkedList<>();
+		this.stackList = new SinglyLinkedListHeadOnly<>();
 	}
-	
-	private boolean isStackEmpty() {
-		return this.top == -1;
+
+	@Override
+	public boolean isStackEmpty() {
+		return this.stackList.isEmpty();
 	}
-	
-	private boolean isStackFull() {
-		return this.top == this.stackSize -1;
+
+	@Override
+	public void push(int e) {
+		this.stackList.addLast(e);
 	}
-	
-	private void resizeStack() {
-		
+
+	@Override
+	public int pop() {
+		int temp = this.stackList.getLast();
+		this.stackList.deleteLast();
+		return temp;
+	}
+
+	@Override
+	public int peek() {
+		return this.stackList.getLast();
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("StackWithLinkedList [stackList=");
+		builder.append(stackList);
+		builder.append("]");
+		return builder.toString();
 	}
 }
