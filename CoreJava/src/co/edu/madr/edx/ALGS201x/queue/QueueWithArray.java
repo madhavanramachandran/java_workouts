@@ -1,7 +1,5 @@
 package co.edu.madr.edx.ALGS201x.queue;
 
-import java.util.Arrays;
-
 /**
  * Basic Queue of fixed size.
  * 
@@ -10,13 +8,17 @@ import java.util.Arrays;
  */
 public class QueueWithArray {
 
-	private Object[] queueArray;
+	private int[] queueArray;
 
 	private int writeIndex;
 
 	private int readIndex;
 
 	public int length;
+
+	public boolean isFull() {
+		return queueArray.length == length - 1;
+	}
 
 	/**
 	 * Default constructor with default size of 10
@@ -26,24 +28,26 @@ public class QueueWithArray {
 	}
 
 	public QueueWithArray(int size) {
-		queueArray = new Object[size];
+		queueArray = new int[size];
 	}
 
-	public void enqueue(Object o) {
-		if (length < writeIndex) {
-			queueArray[writeIndex++] = o;
-			length++;
-		}
+	public void enqueue(int e) {
+		queueArray[writeIndex++] = e;
+		length++;
 	}
 
-	public Object dequeue() {
-		Object temp = queueArray[readIndex];
-		queueArray[readIndex++] = null;
+	public int dequeue() {
+		int temp = queueArray[readIndex];
+		queueArray[readIndex++] = -1;
 		length--;
+		System.out.println("Dequeing:: " + temp);
 		return temp;
 	}
 
 	public Object peek() {
+		if (isEmpty()) {
+			throw new ArrayIndexOutOfBoundsException("No items in the queue");
+		}
 		return queueArray[readIndex];
 	}
 
@@ -54,8 +58,10 @@ public class QueueWithArray {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("QueueWithArray [queueArray=");
-		builder.append(Arrays.toString(queueArray));
+		builder.append("QueueWithArray [");
+		for (int i = readIndex; i < writeIndex; i++) {
+			builder.append(queueArray[i]).append(", ");
+		}
 		builder.append("]");
 		return builder.toString();
 	}
