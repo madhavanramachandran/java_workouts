@@ -1,9 +1,9 @@
-package co.edu.madr.edx.ALGS201x.graph;
+package co.edu.madr.edx.ALGS201x.graph.undirected;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Vertex {
+public class UUVertex {
 
 	
 	private String data;
@@ -13,11 +13,11 @@ public class Vertex {
 	private List<Integer> adjacenyList;
 
 	
-	public Vertex() {
+	public UUVertex() {
 		this(null);
 	}
 	
-	public Vertex(String data) {
+	public UUVertex(String data) {
 		super();
 		adjacenyList = new ArrayList<>();
 		this.data = data;

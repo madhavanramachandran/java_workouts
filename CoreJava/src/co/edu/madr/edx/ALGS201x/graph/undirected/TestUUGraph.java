@@ -1,13 +1,13 @@
-package co.edu.madr.edx.ALGS201x.graph;
+package co.edu.madr.edx.ALGS201x.graph.undirected;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class TestGraph {
+public class TestUUGraph {
 
-	private static final String[] VERTICES = new String[] {"A", "B", "C", "D", "E"};
-	private static final String[] VERTICES_PAIR = new String[] {"0-1", "0-2", "0-3", "1-4", "2-4", "3-4"};
+	private static final String[] VERTICES = new String[] {"A", "B", "C", "D"};
+	private static final String[] VERTICES_PAIR = new String[] {"0-1", "1-2", "0-2", "2-3"};
 	
 	public static void main(String[] args) {
 		try {
@@ -16,8 +16,8 @@ public class TestGraph {
 									VERTICES, 
 									VERTICES_PAIR.length, 
 									VERTICES_PAIR);
-			//graph.bfsTraversal(3);
-			graph.dfsTraversal(0);
+			graph.bfsTraversal(3);
+			System.out.println(graph.isCyclic(0));		
 									
 			
 		} catch (Exception e) {
