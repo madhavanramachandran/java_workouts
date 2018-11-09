@@ -1,4 +1,4 @@
-package co.edu.madr.datastructure.stack.genericstack;
+package co.edu.madr.edx.ALGS201x.stack.genericstack;
 
 import java.util.Arrays;
 

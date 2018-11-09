@@ -1,4 +1,6 @@
-package co.edu.madr.datastructure.stack.genericstack;
+package co.edu.madr.edx.ALGS201x.stack.problems;
+
+import co.edu.madr.edx.ALGS201x.stack.genericstack.GenericStack;
 
 public class StringReversal {
 	
