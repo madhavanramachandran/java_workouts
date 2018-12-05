@@ -17,6 +17,7 @@ package co.edu.madr.geeksforgeeks.array;
  * equals to subarray, else print -1.
  * 
  * @author madr
+ * @since 11 Dec 2018
  *
  */
 public class SubarrayWithGivenSum {

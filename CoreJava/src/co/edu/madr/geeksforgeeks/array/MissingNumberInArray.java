@@ -1,13 +1,9 @@
 package co.edu.madr.geeksforgeeks.array;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-
 /**
  * 
  * @author madr
+ * @since 11 Dec 2018
  * 
  *         Given an array C of size N-1 and given that there are numbers from 1
  *         to N with one element missing, the missing number is to be found.
@@ -21,6 +17,8 @@ import java.util.Scanner;
  *         Constraints: 1 ≤ T ≤ 200 1 ≤ N ≤ 107 1 ≤ C[i] ≤ 107
  * 
  *         Example: Input: 2 \n 5 \n 1 2 3 5 \n10 \n1 2 3 4 5 6 7 8 10
+ *         
+ *         
  *
  */
 public class MissingNumberInArray {
