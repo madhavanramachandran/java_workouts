@@ -40,8 +40,8 @@ public class SubarrayWithGivenSum {
 		int current_sum = arr[0];
 
 		boolean isFound = false;
-		boolean endOfLoop = false;
-		for (int i = 0; i < arr.length; i++) {
+		boolean endOfLoop = false;/*
+		for (int i = 0; i < arr.length; i++) {*/
 			while (!(isFound || endOfLoop)) {
 				if (current_sum == sum) {
 					isFound = true;
@@ -57,7 +57,7 @@ public class SubarrayWithGivenSum {
 					current_sum -= arr[startIdx++];
 				}
 			}
-		}
+		//}
 
 		if (!isFound) {
 			System.out.println("--- No Subset Found ---");

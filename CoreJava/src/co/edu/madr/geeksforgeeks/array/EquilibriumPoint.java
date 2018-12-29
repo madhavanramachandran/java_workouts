@@ -2,6 +2,7 @@ package co.edu.madr.geeksforgeeks.array;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * 
@@ -17,10 +18,27 @@ import java.util.List;
 public class EquilibriumPoint {
 
 	public static void main(String[] args) {
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter arr seperated by spaces");
+		String str = scan.nextLine();
+		int[] parsedArr = parseStrToIntArr(str);
+		pringEquilibriumPoint(parsedArr);
+		
+		System.out.println("For Custom Input");
 		int[] arr = new int[] { 1, 3, 5, 2, 2 };
 		pringEquilibriumPoint(arr);
 		pringEquilibriumPoint(new int[] { 0, -3, 5, -4, -2, 3, 1, 0 });
 
+	}
+
+	private static int[] parseStrToIntArr(String str) {
+		String[] strArr = str.split(" ");
+		int [] arr = new int[strArr.length];
+		for (int i = 0; i < strArr.length; i++) {
+			arr[i] = Integer.parseInt(strArr[i].trim());
+		}
+		return arr;
 	}
 
 	private static void pringEquilibriumPoint(int[] arr) {
