@@ -17,6 +17,7 @@ public class ReverseArray {
 
 		int[] result = reverseArray(inputArr, N);
 		print1DArray(result);
+		scan.close();
 	}
 
 	private static void print1DArray(int[] result) throws IOException {
